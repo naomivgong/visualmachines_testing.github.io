@@ -4,7 +4,7 @@ layout: home
 sitemap: false
 permalink: /
 header:
-  overlay_image: /assets/images/vmgHomeMain.png
+  overlay_image:/assets/images/vmgHomeMain.png
 
 # excerpt: >
 #   <h4>Giving Robots the Gift of Sight</h4><h5>Superhuman cameras enable superhuman robotics,<br>advancing cyberphysical systems and digital health</h5>
@@ -14,7 +14,7 @@ head_scripts:
 <main role="main" class="container-fluid">
   <div class="row">
     <div class="col-md-12 image-wrapper">
-      <img src="/assets/images/website_chosen_square.png" class="img-responsive full-width" style="max-width: 1000%;">
+      <img src="{{site.baseurl}}/assets/images/website_chosen_square.png" class="img-responsive full-width" style="max-width: 1000%;">
       <div class="over-text d-none d-md-none d-lg-block">
 	  <div class="heading" style="color:white;">Equitable Sensing of the Human Body</div>
 	  <div class="body-home" style="color:white">Light-based sensors that are robust to skin tone, body mass
