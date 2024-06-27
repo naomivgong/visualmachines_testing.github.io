@@ -1,3 +1,4 @@
+
 ---
 title: "People"
 layout: people_twoColumns
@@ -97,7 +98,7 @@ permalink: /people/
     <div class="team-column">
       <div class="team-member">
         <a href="{{ member.profile_link }}">
-          <img src="{{ site.baseurl }}/assets/images/people/{{ member.photo }}" alt="Insert photo"/>
+          <img src="{{site.baseurl}}/assets/images/people/{{ member.photo }}" alt="Insert photo"/>
         </a>
         <div class="team-member-details">
           <a class="team-member-name" href="{{ member.profile_link }}">
