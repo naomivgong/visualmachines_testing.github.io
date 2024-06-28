@@ -61,7 +61,7 @@ permalink: /people/
 
 
 <div class="full-width">
-  <img src= "{{site.baseurl}}/assets/images/people/group.jpg" alt="Headshot"> 
+  <img src= "/assets/images/people/group.jpg" alt="Headshot"> 
 </div>
 @row
 
@@ -98,6 +98,7 @@ permalink: /people/
       <div class="team-member">
         <a href="{{ member.profile_link }}">
           <img src="{{ site.baseurl }}/assets/images/people/{{ member.photo }}" alt="Insert photo"/>
+
         </a>
         <div class="team-member-details">
           <a class="team-member-name" href="{{ member.profile_link }}">
@@ -124,7 +125,7 @@ permalink: /people/
     <div class="team-column">
       <div class="team-member">
         <a href="{{ member.profile_link }}">
-          <img src="{{ site.baseurl }}/assets/images/people/{{ member.photo }}" alt="Insert photo"/>
+          <img src="{{ site.url }}/assets/images/people/{{ member.photo }}" alt="Insert photo"/>
         </a>
         <div class="team-member-details">
           <a class="team-member-name" href="{{ member.profile_link }}">
