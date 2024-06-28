@@ -15,12 +15,15 @@ head_scripts:
   <div class="row slideshow">
     {% assign slides = site.data.slides %}
     {% for slide in slides %}
-    <div class="col-12 p-0 slide">
+    <div class="col-12 p-0 slide {% if forloop.first %}active{% endif %}">
       <img src="{{ site.baseurl }}{{ slide.image_link }}" class="img-fluid">
       <div class="over-text d-none d-md-none d-lg-block">
         <div class="heading">{{ slide.title }}</div>
-        <div class="body-home">{{ slide.text_line1 }}</div>
-        <div class="body-home">{{ slide.text_line2 }}</div>
+        <div>
+          <a href="{{ site.baseurl }}{{ slide.article-link }}">
+            <button class="custom-button" type="button">Read Me</button>
+          </a>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -32,80 +35,103 @@ head_scripts:
 
 
 <style>
+
+.custom-button {
+    background-color: ; 
+    border: none; 
+    color: #8f3985; 
+    padding: 15px 32px; 
+    text-align: center; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px;
+    border-radius: 8px; 
+    transition: background-color 0.3s, color 0.3s; /* Add transition for color change */
+}
+
+.custom-button:hover {
+    background-color: #8f3985; 
+    color: white; 
+}
+
+
   /* CSS for slideshow */
-  .slideshow {
-    position: relative;
-    height: 400px; /* Adjust height as per your image dimensions */
-    overflow: hidden;
-  }
-  
-  .slide {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    width: 100%;
-    margin: 0; /* Ensure no margin */
-    padding: 0; /* Ensure no padding */
-  }
+  /* CSS for slideshow */
+.slideshow {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
 
-  .slide.active {
-    opacity: 1;
-  }
-  
-  /* Additional styling for overlay text */
-  .over-text {
-    position: absolute;
-    bottom: 20px;
-    left: 60px;
-    color: black;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    max-width: 510px;
-  }
-  
-  .heading {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .body-home {
-    font-size: 16px;
-  }
-
-  .img-fluid {
-    width: 100%;
-    height: auto;
-  }
-
- .arrow-left {
+.slide {
   position: absolute;
-  bottom: 20px; 
-  left: 20px; 
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.slide.active {
+  opacity: 1; /* Adjusted opacity for active slide */
+}
+
+.over-text {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  color: #8f3985;
+  background-color: rgba(39, 116, 174, 0.4); /* Completely opaque blue background */
+  padding: 10px;
+  max-width: 510px;
+  border-radius: 5px;
+  opacity: 1; /* Ensure over-text is fully opaque */
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.body-home {
+  font-size: 16px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.arrow-left {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   width: 20px;
-  height: 20px; 
-  color:  #666262;
-  font-size: 24px; 
+  height: 20px;
+  color: #666262;
+  font-size: 24px;
   text-align: center;
-  line-height: 20px; 
+  line-height: 20px;
   cursor: pointer;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .arrow-right {
   position: absolute;
-  bottom: 20px; 
+  bottom: 20px;
   right: 20px;
-  width: 20px; 
+  width: 20px;
   height: 20px;
-  color:#666262 ;
-  font-size: 24px; 
+  color: #666262;
+  font-size: 24px;
   text-align: center;
-  line-height: 20px; 
+  line-height: 20px;
   cursor: pointer;
-  z-index: 1000; /* Ensure arrows are above slides */
+  z-index: 1000;
+
 }
 
 </style>
