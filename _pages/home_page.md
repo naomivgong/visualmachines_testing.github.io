@@ -16,11 +16,11 @@ head_scripts:
     {% assign slides = site.data.slides %}
     {% for slide in slides %}
     <div class="col-12 p-0 slide {% if forloop.first %}active{% endif %}">
-      <img src="{{ site.baseurl }}{{ slide.image_link }}" class="img-fluid">
+      <img src="{{ slide.image_link }}" class="img-fluid">
       <div class="over-text d-none d-md-none d-lg-block">
         <div class="heading">{{ slide.title }}</div>
         <div>
-          <a href="{{ site.baseurl }}{{ slide.article-link }}">
+          <a href="{{ slide.article_link }}">
             <button class="custom-button" type="button">Read Me</button>
           </a>
         </div>
@@ -32,6 +32,7 @@ head_scripts:
     <div id="nextArrow" class="arrow arrow-right">&gt;</div>
   </div>
 </main>
+
 
 
 <style>
