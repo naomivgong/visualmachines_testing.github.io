@@ -1,11 +1,11 @@
 - title: "Achieving Fairness in Medical Field"
   article_link: "https://www.science.org/doi/full/10.1126/science.abe9195?casa_token=7csijxiLqywAAAAA%3ADvU6D94XFV8c9vGYXu00zqK1Dkw5wwXOopg_jYXLwIipchUBSqjZ9ThUD1ochmG8GeDWKqtx8Bn7DA"
-  image_link:  "/assets/images/coverpages/ai_medical_device_coverpage.png"
+  image_link:  "ai_medical_device_coverpage.png"
 
 - title: "3D Gaussian Splatting"
   article_link: "https://www.youtube.com/watch?v=JgSOOXVYmug&ab_channel=Jubilee"
-  image_link: "/assets/images/coverpages/Gaussian_splatting_fig2.png"
+  image_link: "Gaussian_splatting_fig2.png"
 
 - title: "Physics with Computer Vision"
   article_link: "https://www.nature.com/articles/s42256-023-00662-0"
-  image_link: "/assets/images/coverpages/physics_cv_coverpage.png"
+  image_link: "physics_cv_coverpage.png"
