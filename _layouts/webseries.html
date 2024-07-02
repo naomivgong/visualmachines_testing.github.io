@@ -20,7 +20,7 @@
     {% include_cached masthead.html %}
     <br> <br> <br> <br> <br>
     <div>
-      <img src="/assets/images/webseries/Lecture_Banner.jpeg" alt="Banner" style="width:100%; height:auto; margin-bottom:12px; opacity:0.5;">
+      <img src="{{site.baseurl}}/assets/images/webseries/Lecture_Banner.jpeg" alt="Banner" style="width:100%; height:auto; margin-bottom:12px; opacity:0.5;">
     </div>
     <div class="initial-content" style="margin:50px 100px;">
 
@@ -45,7 +45,7 @@
             {% for organizer in site.data.webseries_organizers %}
               <div class="col-sm-3" style="height:200px;">
                 <div style="border-radius:50%; width:125px; height:125px; text-align:center; margin:auto; overflow:hidden;">
-                  <img src="/assets/images/webseries/{{ organizer.image }}" style="overflow:hidden;">
+                  <img src="{{site.baseurl}}/assets/images/webseries/{{ organizer.image }}" style="overflow:hidden;">
                 </div>
                 <p style="text-align:center; font-weight:bold; padding-top:20px; margin-bottom: 0px;"> {{ organizer.name }} </p>
                 <p style="text-align:center; font-weight:bold; color:darkgray;"> {{ organizer.institution }} </p>
@@ -67,7 +67,7 @@
                     <div class="webseries-image" style="height: 250px; display:inline-block; text-align: center;">
                         <div style="margin: auto; display: table;">
                             <div style="border-radius:50%; margin-left: auto; width:125px; height:125px; margin-top:25px; overflow:hidden; border: .5px lightgray solid;">
-                                <img alt="coming soon" src="/assets/images/webseries/{{ entry.speaker_image }}" style="line-height: 125px; overflow:hidden;">
+                                <img alt="coming soon" src="{{site.baseurl}}/assets/images/webseries/{{ entry.speaker_image }}" style="line-height: 125px; overflow:hidden;">
                             </div>
                         </div>
                         <p class="webseries-image-label" style="padding-top:10px; margin-bottom: 0px;margin-left:0px;"> {{ entry.speaker }} </p>
