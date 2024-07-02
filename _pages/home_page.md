@@ -11,52 +11,50 @@ header:
 head_scripts:
 
 ---
+ 
+
 <main role="main" class="container-fluid">
   <div class="row slideshow">
-    {% assign slides = site.data.slides %}
-    {% for slide in slides %}
-    <div class="col-12 p-0 slide {% if forloop.first %}active{% endif %}">
-      <img src="{{ slide.image_link }}" class="img-fluid">
+    {% for slide in site.data.slides %}
+    <div class="col-md-12 image-wrapper slide">
+      <img src="{{ slide.image_link }}" class="img-fluid" style="max-width: 100%;">
       <div class="over-text d-none d-md-none d-lg-block">
-        <div class="heading">{{ slide.title }}</div>
-        <div>
-          <a href="{{ slide.article_link }}">
-            <button class="custom-button" type="button">Read Me</button>
-          </a>
+        <div class="heading" style="color:white;">{{ slide.title }}</div>
+        <div class="body-home" style="color:white;">
+          {{ slide.description }}
+          <br>
+          <a href="{{ slide.article_link }}" class="btn btn-primary">Read More</a>
         </div>
       </div>
     </div>
     {% endfor %}
-    <!-- Navigation Arrows -->
-    <div id="prevArrow" class="arrow arrow-left">&lt;</div>
-    <div id="nextArrow" class="arrow arrow-right">&gt;</div>
   </div>
 </main>
 
 
 
+
+
 <style>
 
-.custom-button {
-    background-color: ; 
-    border: none; 
+.btn {
     color: #8f3985; 
-    padding: 15px 32px; 
-    text-align: center; 
+    background-color: white; 
+    border: 1px solid #8f3985; 
+    padding: 10px 20px; 
+    text-decoration: none; 
     display: inline-block; 
-    font-size: 16px; 
-    margin: 4px 2px;
-    border-radius: 8px; 
-    transition: background-color 0.3s, color 0.3s; /* Add transition for color change */
+    border-radius: 4px; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
-.custom-button:hover {
-    background-color: #8f3985; 
-    color: white; 
+.btn:hover {
+    background-color: #8f3985; /* Darker background color on hover */
+    color: white; /* Text color becomes white on hover */
 }
 
 
-  /* CSS for slideshow */
+
   /* CSS for slideshow */
 .slideshow {
   position: relative;
@@ -69,15 +67,18 @@ head_scripts:
   left: 0;
   top: 0;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  visibility: hidden; /* Hide non-active slides */
+  transition: opacity 1s ease-in-out, visibility 0.5s ease-in-out; /* Smooth opacity and visibility transition */
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .slide.active {
-  opacity: 1; /* Adjusted opacity for active slide */
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Show active slide */
 }
+
 
 .over-text {
   position: absolute;
@@ -137,36 +138,32 @@ head_scripts:
 
 </style>
 
+
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
+  document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const slideInterval = 3000; // Interval in milliseconds (3 seconds)
 
-  // Show first slide
-  slides[currentSlide].classList.add("active");
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
 
-  // Function to show next slide
-  function nextSlide() {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-  }
+    // Show the first slide initially
+    slides[currentSlide].classList.add('active');
 
-  // Function to show previous slide
-  function prevSlide() {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    slides[currentSlide].classList.add("active");
-  }
+    // Automatically move to the next slide every slideInterval milliseconds
+    setInterval(nextSlide, slideInterval);
+  });
 
-  // Automatically move to next slide every 3 seconds
-  setInterval(nextSlide, 5000);
 
-  // Button click events for navigation arrows
-  document.getElementById("nextArrow").addEventListener("click", nextSlide);
-  document.getElementById("prevArrow").addEventListener("click", prevSlide);
-});
 </script>
+
+
+
 
 
 
