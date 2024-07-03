@@ -159,7 +159,7 @@ head_scripts:
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.dot');
   let currentSlide = 0;
-  const slideInterval = 5000; // Interval in milliseconds (3 seconds)
+  const slideInterval = 8000; // Interval in milliseconds (3 seconds)
 
   function showSlide(index) {
     slides[currentSlide].classList.remove('active');

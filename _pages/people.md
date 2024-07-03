@@ -61,7 +61,7 @@ permalink: /people/
 
 
 <div class="full-width">
-  <img src= "/visualmachines_testing.github.io/assets/images/people/group.jpg" alt="Headshot"> 
+  <img src= "{{site.baseurl}}/assets/images/people/group.jpg" alt="Headshot"> 
 </div>
 @row
 
