@@ -4,8 +4,8 @@
 
 - title: "3D Gaussian Splatting"
   article_link: "https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_Feature_3DGS_Supercharging_3D_Gaussian_Splatting_to_Enable_Distilled_Feature_CVPR_2024_paper.html"
-  image_link: "splatting2.png"
+  image_link: "splattgray.png"
 
 - title: "Physics with Computer Vision"
   article_link: "https://www.nature.com/articles/s42256-023-00662-0"
-  image_link: "physics.png"
+  image_link: "physicsgradient2.png"

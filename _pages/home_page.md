@@ -25,7 +25,7 @@ head_scripts:
     <div class="col-md-12 image-wrapper slide">
       <img src="{{site.baseurl}}/assets/images/coverpages/{{ slide.image_link }}" class="img-fluid" style="max-width: 100%;">
       <div class="over-text d-none d-md-none d-lg-block">
-        <div class="heading" style="color:gray;">{{ slide.title }}</div>
+        <div class="heading" style="color:#302b2b;">{{ slide.title }}</div>
         <div class="body-home" style="color:white;">
           {{ slide.description }}
           <br>
@@ -88,17 +88,17 @@ head_scripts:
 .over-text {
   position: absolute;
   top: calc(50% - 40px); /* Adjust this value as needed to align with dots */
-  left: 50px; 
+  left: 100px; 
   color: #8f3985;
-  padding: 10px;
-  max-width: 510px;
+  padding: 20px;
+  max-width: 600px;
   border-radius: 5px;
   transform: translateY(-50%); 
   opacity: 1;
   text-align: center; /* Center the text horizontally */
 }
 .heading {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -110,13 +110,15 @@ head_scripts:
   margin: 0 auto; /* Center the image horizontally */
 }
 
-.dots-container {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  z-index: 1000;
-}
+
+  .dots-container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 10px; /* Adjust left position as needed */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+
 
 .dot {
   height: 8px;
