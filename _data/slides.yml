@@ -1,11 +1,11 @@
 - title: "Achieving Fairness in Medical Field"
   article_link: "https://www.science.org/doi/full/10.1126/science.abe9195?casa_token=7csijxiLqywAAAAA%3ADvU6D94XFV8c9vGYXu00zqK1Dkw5wwXOopg_jYXLwIipchUBSqjZ9ThUD1ochmG8GeDWKqtx8Bn7DA"
-  image_link:  "ai_medical_device_coverpage.png"
+  image_link:  "fairness2.png"
 
 - title: "3D Gaussian Splatting"
   article_link: "https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_Feature_3DGS_Supercharging_3D_Gaussian_Splatting_to_Enable_Distilled_Feature_CVPR_2024_paper.html"
-  image_link: "Gaussian_splatting_fig2.png"
+  image_link: "splatting2.png"
 
 - title: "Physics with Computer Vision"
   article_link: "https://www.nature.com/articles/s42256-023-00662-0"
-  image_link: "physics_cv_coverpage.png"
+  image_link: "physics.png"

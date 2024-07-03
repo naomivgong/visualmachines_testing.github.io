@@ -15,11 +15,17 @@ head_scripts:
 
 <main role="main" class="container-fluid">
   <div class="row slideshow">
+
+  <div class="dots-container">
+      {% for slide in site.data.slides %}
+        <span class="dot" onclick="currentSlide({{ forloop.index0 }})"></span>
+      {% endfor %}
+    </div>
     {% for slide in site.data.slides %}
     <div class="col-md-12 image-wrapper slide">
-      <img src="/visualmachines_testing.github.io/assets/images/coverpages/{{ slide.image_link }}" class="img-fluid" style="max-width: 100%;">
+      <img src="{{site.baseurl}}/assets/images/coverpages/{{ slide.image_link }}" class="img-fluid" style="max-width: 100%;">
       <div class="over-text d-none d-md-none d-lg-block">
-        <div class="heading" style="color:white;">{{ slide.title }}</div>
+        <div class="heading" style="color:gray;">{{ slide.title }}</div>
         <div class="body-home" style="color:white;">
           {{ slide.description }}
           <br>
@@ -59,7 +65,6 @@ head_scripts:
 .slideshow {
   position: relative;
   height: 400px;
-  overflow: hidden;
 }
 
 .slide {
@@ -75,65 +80,72 @@ head_scripts:
 }
 
 .slide.active {
-  opacity: 1; /* Fully visible */
-  visibility: visible; /* Show active slide */
+  opacity: 1; 
+  visibility: visible; 
 }
 
 
 .over-text {
   position: absolute;
-  bottom: 40px;
-  left: 60px;
+  top: calc(50% - 40px); /* Adjust this value as needed to align with dots */
+  left: 50px; 
   color: #8f3985;
-  background-color: rgba(39, 116, 174, 0.4); /* Completely opaque blue background */
   padding: 10px;
   max-width: 510px;
   border-radius: 5px;
-  opacity: 1; /* Ensure over-text is fully opaque */
+  transform: translateY(-50%); 
+  opacity: 1;
+  text-align: center; /* Center the text horizontally */
 }
-
 .heading {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
-
 .body-home {
   font-size: 16px;
 }
 
 .img-fluid {
-  width: 100%;
-  height: auto;
+  margin: 0 auto; /* Center the image horizontally */
 }
 
-.arrow-left {
+.dots-container {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 20px;
-  height: 20px;
-  color: #666262;
-  font-size: 24px;
-  text-align: center;
-  line-height: 20px;
-  cursor: pointer;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
   z-index: 1000;
 }
 
-.arrow-right {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 20px;
-  height: 20px;
-  color: #666262;
-  font-size: 24px;
-  text-align: center;
-  line-height: 20px;
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 4px 0; 
+  background-color: #bbb;
+  border-radius: 50%;
+  display: block;
+  transition: background-color 0.6s ease;
   cursor: pointer;
-  z-index: 1000;
+}
 
+.dot.active {
+  background-color: #717171;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation for slides */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 </style>
@@ -142,22 +154,42 @@ head_scripts:
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-    const slideInterval = 3000; // Interval in milliseconds (3 seconds)
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let currentSlide = 0;
+  const slideInterval = 5000; // Interval in milliseconds (3 seconds)
 
-    function nextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
-
-    // Show the first slide initially
+  function showSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = index;
     slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
 
-    // Automatically move to the next slide every slideInterval milliseconds
-    setInterval(nextSlide, slideInterval);
+  function nextSlide() {
+    showSlide((currentSlide + 1) % slides.length);
+  }
+
+  // Show the first slide initially
+  showSlide(currentSlide);
+
+  // Automatically move to the next slide every slideInterval milliseconds
+  const intervalId = setInterval(nextSlide, slideInterval);
+
+  // Add click event listeners to dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', function() {
+      clearInterval(intervalId); // Stop the automatic slideshow
+      showSlide(index);
+      setTimeout(function() { // Restart the automatic slideshow after a click
+        setInterval(nextSlide, slideInterval);
+      }, slideInterval);
+    });
   });
+});
+
+
 
 
 </script>
@@ -175,7 +207,7 @@ head_scripts:
 <main role="main" class="container">
   <div class="row">
     <div class="col-md-5 offset-md-1">
-      <div class="heading-home" style="color:#8f3985;">News</div>
+      <div class="heading-home" style="color:#8f3985; margin-top: 120px;">News</div>
 
 
 
@@ -218,7 +250,7 @@ head_scripts:
       <br>
     </div>
     <div class="col-md-5 offset-md-1">
-      <div class="heading-home" style="color:#8f3985;">Current Teaching</div>
+      <div class="heading-home" style="color:#8f3985; margin-top: 120px;">Current Teaching</div>
       <div class="heading-home padded-top">Winter 2024</div>
       <div class="body-home">ECE 149: Foundations of Computer Vision</div>
       <div class="heading-home padded-top">Fall 2023</div>
