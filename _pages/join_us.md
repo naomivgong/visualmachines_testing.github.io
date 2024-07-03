@@ -5,7 +5,7 @@ sitemap: false
 permalink: /join_us/
 ---
 
-![Frisbee Picture](/visualmachines_testing/assets/images/vmg_frisbee_2019.jpg){:style="height: auto; width:100%; object-fit: cover; object-position: 0% 90%"}
+![Frisbee Picture]({{site.baseurl}}/assets/images/vmg_frisbee_2019.jpg){:style="height: auto; width:100%; object-fit: cover; object-position: 0% 90%"}
 
 <br>
 
