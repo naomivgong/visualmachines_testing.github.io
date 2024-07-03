@@ -17,7 +17,7 @@ head_scripts:
   <div class="row slideshow">
     {% for slide in site.data.slides %}
     <div class="col-md-12 image-wrapper slide">
-      <img src="{{ site.baseurl }}/assets/images/coverpages/{{ slide.image_link }}" class="img-fluid" style="max-width: 100%;">
+      <img src="/visualmachines_testing.github.io/assets/images/coverpages/{{ slide.image_link }}" class="img-fluid" style="max-width: 100%;">
       <div class="over-text d-none d-md-none d-lg-block">
         <div class="heading" style="color:white;">{{ slide.title }}</div>
         <div class="body-home" style="color:white;">
