@@ -64,7 +64,7 @@ head_scripts:
   /* CSS for slideshow */
 .slideshow {
   position: relative;
-  height: 400px;
+  height: 500px;
 }
 
 .slide {
@@ -209,7 +209,7 @@ head_scripts:
 <main role="main" class="container">
   <div class="row">
     <div class="col-md-5 offset-md-1">
-      <div class="heading-home" style="color:#8f3985; margin-top: 120px;">News</div>
+      <div class="heading-home" style="color:#8f3985; margin-top: 30px;">News</div>
 
 
 
@@ -252,7 +252,7 @@ head_scripts:
       <br>
     </div>
     <div class="col-md-5 offset-md-1">
-      <div class="heading-home" style="color:#8f3985; margin-top: 120px;">Current Teaching</div>
+      <div class="heading-home" style="color:#8f3985; margin-top: 30px;">Current Teaching</div>
       <div class="heading-home padded-top">Winter 2024</div>
       <div class="body-home">ECE 149: Foundations of Computer Vision</div>
       <div class="heading-home padded-top">Fall 2023</div>
