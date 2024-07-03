@@ -46,7 +46,7 @@ We propose a method to infer semantic segmentation maps from images captured und
 @section 
 <div style="width:70%">
 <figure> 
-  <img style="width:70%" src= "/assets/images/publications/weatherproof_clip/model.png" alt="Missing"> 
+  <img style="width:70%" src= "{{ site.baseurl }}/assets/images/publications/weatherproof_clip/model.png" alt="Missing"> 
 </figure>
 </div>
 <div style="width:80%">
@@ -55,7 +55,7 @@ By using CLIP-based language guidance, models are able to generate features that
 <br>
 <div style="width:70%">
 <figure> 
-  <img src= "/assets/images/publications/weatherproof_clip/dataset.png" alt="Missing"> 
+  <img src= "{{ site.baseurl }}/assets/images/publications/weatherproof_clip/dataset.png" alt="Missing"> 
 </figure>
 </div>
 <div style="width:80%">
@@ -64,7 +64,7 @@ WeatherProof dataset contains accurate clear and adverse weather image pairs wit
 <br>
 <div style="width:50%">
 <figure> 
-  <img src= "/assets/images/publications/weatherproof_clip/weathercombos.png" alt="Missing"> 
+  <img src= "{{ site.baseurl }}/assets/images/publications/weatherproof_clip/weathercombos.png" alt="Missing"> 
 </figure>
 </div>
 <div style="width:70%">
@@ -78,7 +78,7 @@ The train and test sets of WeatherProof include paired sets of varied combinatio
 @section
 <br>
 <figure>
-  <img style="width:75%" src="/assets/images/publications/weatherproof_clip/wproof_table.png" alt="Missing">
+  <img style="width:75%" src="{{ site.baseurl }}/assets/images/publications/weatherproof_clip/wproof_table.png" alt="Missing">
 </figure>
 <div style="width:80%">
 On WeatherProof dataset, our proposed training method outperforms standard fine-tuning baselines for InternImage [39], ConvNeXt [22], and SWIN [20, 21] when evaluating on adverse weather images.
@@ -87,7 +87,7 @@ On WeatherProof dataset, our proposed training method outperforms standard fine-
 <br>
 <br>
 <figure>
-  <img style="width:75%" src="/assets/images/publications/weatherproof_clip/wproof_acdc.png" alt="Missing">
+  <img style="width:75%" src="{{ site.baseurl }}/assets/images/publications/weatherproof_clip/wproof_acdc.png" alt="Missing">
 </figure>
 <div style="width:80%">
 Our language guided model achieves SOTA results on the ACDC dataset. The Average mIoU is calculated by averaging between the three categories.</div>
@@ -95,7 +95,7 @@ Our language guided model achieves SOTA results on the ACDC dataset. The Average
 <br>
 <br>
 <figure>
-  <img style="width:75%" src="/assets/images/publications/weatherproof_clip/wproof_a2i2.png" alt="Missing">
+  <img style="width:75%" src="{{ site.baseurl }}/assets/images/publications/weatherproof_clip/wproof_a2i2.png" alt="Missing">
 </figure>
 <div style="width:80%">
 InternImage [39] performs better on the A2I2-Haze dataset when leveraging language guidance. The use of CLIP-based guidance also helps models generalize beyond standard natural weather phenomenon to man-made smoke effects.</div>
