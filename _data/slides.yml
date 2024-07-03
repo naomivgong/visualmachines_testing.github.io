@@ -3,7 +3,7 @@
   image_link:  "ai_medical_device_coverpage.png"
 
 - title: "3D Gaussian Splatting"
-  article_link: "https://www.youtube.com/watch?v=JgSOOXVYmug&ab_channel=Jubilee"
+  article_link: "https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_Feature_3DGS_Supercharging_3D_Gaussian_Splatting_to_Enable_Distilled_Feature_CVPR_2024_paper.html"
   image_link: "Gaussian_splatting_fig2.png"
 
 - title: "Physics with Computer Vision"
